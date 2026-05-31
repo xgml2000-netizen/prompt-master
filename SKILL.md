@@ -12,6 +12,12 @@ description: >-
 
 A Codex skill for prompt engineering, optimization, and management workflows.
 
+## Positioning
+
+Prompt Master is not a generic prompt collection. It is a bilingual prompt engineering workflow for Codex and tool-using AI agents.
+
+Its core goal: turn rough human intent into prompts that are structured, reusable, verifiable, and safe for agent execution.
+
 ## Quick Guide
 
 When triggered, determine the user intent and route to the appropriate workflow:
@@ -21,10 +27,24 @@ When triggered, determine the user intent and route to the appropriate workflow:
 - **Template**: Create reusable prompt templates for specific use cases
 - **Design**: Design a new prompt from requirements
 - **Review**: Score an existing prompt and list concrete fixes
+- **Case study**: Explain why a weak prompt fails and show a stronger version
 
 ### Workflow selection
 
 Ask the user which mode if the intent is unclear. Otherwise, proceed directly.
+
+## Core Method: CRAFT-V
+
+Use CRAFT-V when improving or designing prompts:
+
+- **Context**: What background, inputs, environment, audience, and risks does the model need?
+- **Role**: What functional perspective should the model take?
+- **Action**: What exact work should the model perform?
+- **Format**: What should the output look like?
+- **Tests**: How will the user judge whether the result succeeded?
+- **Verification**: What should the model check before finalizing?
+
+Do not optimize for fancy language. Optimize for reliable behavior.
 
 ## Prompt Optimization
 
@@ -37,6 +57,8 @@ When optimizing a prompt:
    - Structure with clear sections (Role, Task, Context, Output Format)
    - Add examples where helpful
    - Remove redundant or contradictory instructions
+   - Add success criteria and verification steps
+   - Preserve the user's original intent
 4. Present before/after comparison
 5. Explain key changes made
 6. Include a final copy-ready prompt
@@ -64,6 +86,7 @@ For Chinese-English prompt translation:
 - Maintain all constraints and guardrails
 - Do not translate code identifiers, environment variables, file paths, CLI flags, API names, or quoted literals unless the user explicitly asks
 - When a phrase has no exact equivalent, preserve intent over word-for-word translation
+- If translating a vague prompt, offer an optional "agent-ready improved version" after the faithful translation
 
 ## Prompt Templates
 
@@ -120,6 +143,38 @@ Return a short scorecard and prioritized fixes:
 [Copy-ready revision]
 ```
 
+## Case Study Output
+
+When the user asks for examples, teaching content, or repo documentation, use this structure:
+
+```markdown
+## Original Prompt
+[weak prompt]
+
+## Problems
+- [specific weakness]
+
+## Improved Prompt
+[copy-ready prompt]
+
+## Why It Works
+- [principle and effect]
+
+## Reuse Pattern
+[generalizable lesson]
+```
+
+## Core Competitiveness to Emphasize
+
+When writing documentation for this project, emphasize:
+
+- Agent-first prompts, not only chatbot prompts
+- Chinese-English bilingual prompt engineering
+- Reusable prompt architecture
+- Before/after case studies
+- Quality review rubrics
+- Codex skill integration
+
 ## Design Principles
 
 - Be specific, not vague
@@ -129,3 +184,5 @@ Return a short scorecard and prioritized fixes:
 - Keep prompts concise but complete
 - Optimize for the model's behavior, not for sounding impressive
 - Prefer testable instructions over abstract qualities
+- Make prompts verifiable whenever tools, files, factual claims, or code changes are involved
+- Use placeholders for reusable inputs

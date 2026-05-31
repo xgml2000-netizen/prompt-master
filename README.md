@@ -1,28 +1,52 @@
 # Prompt Master
 
-Prompt Master is a bilingual Codex skill and prompt library for turning rough ideas into clear, reusable, production-ready prompts.
+Prompt Master is a bilingual prompt engineering skill and template library for Codex and AI agents.
 
-It focuses on practical prompt work for coding agents, research agents, writing workflows, and Chinese-English prompt translation.
+It is built for one practical goal: turn vague human intent into prompts that agents can execute, verify, and reuse.
 
-> 中文用户：这是一个面向 Codex / AI Agent 的提示词优化技能库，适合用来优化系统提示词、生成模板、翻译中英文提示词，以及沉淀可复用工作流。
+> 中文：Prompt Master 不是简单的“提示词大全”，而是一套面向 Codex / AI Agent 的双语提示词工程工作流。它帮助你把模糊需求变成结构清晰、可执行、可复用、可评审的高质量提示词。
+
+## Core Competitiveness
+
+Most prompt repositories collect prompts. Prompt Master focuses on the full prompt production workflow:
+
+1. **Agent-first design**
+   Prompts are written for tool-using agents, not only chatbots. They include context gathering, execution rules, verification, risk handling, and output contracts.
+
+2. **Bilingual prompt engineering**
+   Chinese-English prompt work is treated as a first-class workflow. The library preserves technical terms, code blocks, constraints, and intent instead of doing literal translation.
+
+3. **Reusable structure, not magic wording**
+   The project teaches repeatable patterns: role, task, context, constraints, output format, examples, verification, and failure handling.
+
+4. **Before/after case studies**
+   Each improvement shows what changed and why, so users can learn the method instead of copying blindly.
+
+5. **Quality review system**
+   Prompts can be scored and improved with checklists, rubrics, and concrete failure modes.
+
+6. **Codex skill integration**
+   This repo is both documentation and a usable Codex skill. You can install it locally and use it as a prompt optimization assistant.
 
 ## Why Star This Repo
 
-- Ready-to-use prompt templates for common AI agent workflows
-- Chinese-English prompt translation rules that preserve technical meaning
-- A structured prompt review checklist for improving weak prompts
-- Codex skill instructions that can be installed locally
-- Examples that show before/after prompt upgrades
+- You write prompts for coding agents, research agents, automation, or AI workflows.
+- You need Chinese-English prompt translation that does not break technical meaning.
+- You want copy-ready templates with clear placeholders.
+- You want to learn how to improve prompts, not just collect them.
+- You want a local Codex skill that can review, rewrite, and structure prompts.
 
-## What It Helps With
+## What This Repo Contains
 
-| Workflow | Use it for |
+| Area | Content |
 | --- | --- |
-| Prompt optimization | Make vague prompts specific, structured, testable, and easier for AI agents to follow |
-| Prompt translation | Translate prompts between Chinese and English while preserving constraints, code, and intent |
-| Prompt templates | Create reusable prompts for code review, research, writing, automation, and planning |
-| System prompt design | Convert product requirements or working habits into stable AI assistant behavior |
-| Prompt review | Check missing context, unclear output format, conflicting rules, and weak guardrails |
+| Core method | [Prompt Engineering Framework](docs/prompt-engineering-framework.md) |
+| Differentiation | [Core Competitiveness](docs/core-competitiveness.md) |
+| Case studies | [Real Workflow Case Studies](examples/case-studies.md) |
+| Before/after | [Before and After Examples](examples/before-after.md) |
+| Templates | [Agent](assets/templates/agent-system-prompt.md), [Code Review](assets/templates/code-review-prompt.md), [Research](assets/templates/research-brief-prompt.md), [Translation](assets/templates/translation-prompt.md), [Bug Fix](assets/templates/bug-fix-prompt.md), [PRD to Tasks](assets/templates/prd-to-tasks-prompt.md), [Data Analysis](assets/templates/data-analysis-prompt.md), [Content Rewrite](assets/templates/content-rewrite-prompt.md) |
+| Quality system | [Prompt Quality Checklist](assets/checklists/prompt-quality-checklist.md), [Prompt Review Rubric](assets/checklists/prompt-review-rubric.md) |
+| Growth | [Star Growth Plan](docs/star-growth-plan.md) |
 
 ## Quick Start
 
@@ -46,6 +70,66 @@ Or in Chinese:
 [粘贴你的提示词]
 ```
 
+## Typical Use Cases
+
+### 1. Turn a vague request into an agent-ready prompt
+
+Input:
+
+```text
+Help me fix this bug.
+```
+
+Output:
+
+```text
+Act as a senior debugging partner. Inspect the error, reproduce the failure when possible, identify the smallest root cause, implement a focused fix, and verify it with the most relevant test or command.
+
+Context:
+- Project: [project name]
+- Error: [paste error]
+- Expected behavior: [expected behavior]
+- Actual behavior: [actual behavior]
+- Recent changes: [recent changes]
+
+Rules:
+- Do not rewrite unrelated code.
+- Preserve existing style and public behavior.
+- If reproduction is impossible, explain what evidence is missing and provide the safest next diagnostic step.
+
+Output:
+1. Root cause
+2. Fix summary
+3. Files changed
+4. Verification result
+```
+
+### 2. Translate a Chinese prompt without damaging technical constraints
+
+Bad translation changes terms, loses guardrails, or rewrites code-like text.
+
+Prompt Master translation keeps:
+
+- File paths
+- API names
+- CLI flags
+- JSON fields
+- Code blocks
+- Output format
+- Negative instructions
+
+### 3. Review a system prompt before shipping it
+
+Prompt Master can score a prompt across:
+
+- Goal clarity
+- Context completeness
+- Tool-use readiness
+- Output contract
+- Constraint quality
+- Failure handling
+- Evaluation criteria
+
 ## Repository Structure
 
 ```text
@@ -56,66 +140,93 @@ prompt-master/
 ├── assets/
 │   ├── checklists/
 │   └── templates/
-├── examples/
 ├── docs/
+├── examples/
+├── CONTRIBUTING.md
 └── README.md
 ```
 
-## Popular Templates
+## Method: CRAFT-V
 
-- [Agent System Prompt Template](assets/templates/agent-system-prompt.md)
-- [Code Review Prompt Template](assets/templates/code-review-prompt.md)
-- [Research Brief Prompt Template](assets/templates/research-brief-prompt.md)
-- [Chinese-English Prompt Translation Template](assets/templates/translation-prompt.md)
+Prompt Master uses a simple framework called **CRAFT-V**:
+
+| Step | Meaning | Question |
+| --- | --- | --- |
+| C | Context | What does the model need to know? |
+| R | Role | What perspective should it take? |
+| A | Action | What exactly should it do? |
+| F | Format | What should the output look like? |
+| T | Tests | How do we know it succeeded? |
+| V | Verification | What should it check before answering? |
+
+Read the full method in [docs/prompt-engineering-framework.md](docs/prompt-engineering-framework.md).
 
 ## Example: Prompt Upgrade
 
 Weak prompt:
 
 ```text
-Help me review this code.
+帮我写一个日报。
 ```
 
 Improved prompt:
 
 ```text
-Act as a senior code reviewer. Review the following change for correctness, security, maintainability, and missing tests.
+请你作为业务分析助理，根据下面的原始信息生成一份适合发给团队的日报。
 
-Focus on actionable findings first. For each finding, include severity, file or function reference, why it matters, and a suggested fix. If there are no serious issues, say that clearly and mention remaining test gaps.
+背景：
+- 读者：[团队/老板/客户]
+- 语气：[正式/简洁/轻松]
+- 今日目标：[今天最重要的目标]
 
-Code:
-[paste diff or files]
+要求：
+- 先总结关键进展，再列出风险和明日计划。
+- 不要编造没有提供的数据。
+- 对阻塞事项给出建议下一步。
+- 保持 300 字以内。
+
+输出格式：
+## 今日进展
+- [要点]
+
+## 风险与阻塞
+- [要点]
+
+## 明日计划
+- [要点]
+
+原始信息：
+[粘贴内容]
 ```
 
-See more examples in [examples/before-after.md](examples/before-after.md).
+Why it is better:
 
-## Prompt Quality Checklist
+- Defines audience and tone
+- Prevents fabricated data
+- Gives an output contract
+- Turns a generic writing request into a repeatable workflow
 
-Before using a prompt, check whether it includes:
+More examples:
 
-- A clear role or perspective
-- A specific task
-- Enough context and inputs
-- Constraints and boundaries
-- Output format
-- Success criteria
-- Examples, when they reduce ambiguity
-- Negative instructions, when common mistakes are likely
+- [Before and After Examples](examples/before-after.md)
+- [Real Workflow Case Studies](examples/case-studies.md)
 
-See the full checklist in [assets/checklists/prompt-quality-checklist.md](assets/checklists/prompt-quality-checklist.md).
+## Good Prompts in This Repo Are
 
-## Growth Plan
+- Specific enough to execute
+- Structured enough to reuse
+- Bounded enough to avoid drift
+- Verifiable enough to trust
+- Practical enough for real workflows
+- Bilingual when translation is part of the job
 
-This repo can earn more Stars by becoming more useful at first glance:
+## Roadmap
 
-1. Add high-quality templates for coding, research, writing, and product workflows.
-2. Show before/after examples instead of only describing prompt engineering.
-3. Add Chinese content, because bilingual prompt work is a real differentiator.
-4. Publish small, frequent updates so the repo looks alive.
-5. Add GitHub topics such as `prompt-engineering`, `codex`, `ai-agent`, `chatgpt`, `prompts`, `prompt-template`, `chinese`.
-6. Share specific examples on X, Reddit, V2EX, Juejin, Zhihu, and AI coding communities.
-
-See [docs/star-growth-plan.md](docs/star-growth-plan.md) for a more detailed roadmap.
+- Add 30+ battle-tested prompt templates
+- Add more Chinese-English case studies
+- Add domain packs for coding, research, writing, product, data, and operations
+- Add evaluation examples for prompt regression testing
+- Add short demo videos or GIFs for the Codex skill workflow
 
 ## Contributing
 
