@@ -40,6 +40,8 @@ Most prompt repositories collect prompts. Prompt Master focuses on the full prom
 
 | Area | Content |
 | --- | --- |
+| Usage | [How to Use](docs/how-to-use.md) |
+| Platform setup | [Platform Configuration Guide](docs/platform-configuration.md) |
 | Core method | [Prompt Engineering Framework](docs/prompt-engineering-framework.md) |
 | Differentiation | [Core Competitiveness](docs/core-competitiveness.md) |
 | Case studies | [Real Workflow Case Studies](examples/case-studies.md) |
@@ -50,10 +52,29 @@ Most prompt repositories collect prompts. Prompt Master focuses on the full prom
 
 ## Quick Start
 
-Install the skill into your Codex skills folder:
+Prompt Master can be used in three modes:
+
+1. **Codex skill**: install this repo into your Codex skills folder.
+2. **Prompt library**: copy templates from `assets/templates/`.
+3. **Platform adapter**: paste Prompt Master instructions into ChatGPT, Claude, Cursor, Gemini, Copilot, or API system prompts.
+
+Read:
+
+- [How to Use](docs/how-to-use.md)
+- [Platform Configuration Guide](docs/platform-configuration.md)
+
+### Codex Native Install
+
+macOS / Linux:
 
 ```bash
 cp -r prompt-master ~/.codex/skills/
+```
+
+Windows PowerShell:
+
+```powershell
+Copy-Item -Recurse .\prompt-master $env:USERPROFILE\.codex\skills\
 ```
 
 Then ask Codex:
@@ -66,9 +87,24 @@ Use prompt-master to optimize this prompt:
 Or in Chinese:
 
 ```text
-使用 prompt-master 帮我优化这个提示词：
+使用 prompt-master 帮我优化这个提示词:
 [粘贴你的提示词]
 ```
+
+### Platform Setup at a Glance
+
+| Platform | How to configure Prompt Master |
+| --- | --- |
+| Codex | Install as a native skill using `SKILL.md` |
+| ChatGPT | Create a custom GPT or Project and paste Prompt Master instructions |
+| Claude | Use Project instructions, Project knowledge, or Claude Code memory |
+| Cursor | Add a project rule under `.cursor/rules/` |
+| GitHub Copilot | Add `.github/copilot-instructions.md` |
+| Gemini | Create a custom Gem |
+| DeepSeek / Kimi / Doubao / Qwen | Use system prompt, bot instructions, pinned prompt, or knowledge base |
+| API apps | Use Prompt Master as a system/developer prompt and retrieve templates as context |
+
+See the full guide: [docs/platform-configuration.md](docs/platform-configuration.md).
 
 ## Typical Use Cases
 
@@ -142,6 +178,7 @@ prompt-master/
 │   └── templates/
 ├── docs/
 ├── examples/
+├── platform-prompts/
 ├── CONTRIBUTING.md
 └── README.md
 ```

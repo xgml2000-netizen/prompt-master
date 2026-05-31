@@ -28,10 +28,39 @@ When triggered, determine the user intent and route to the appropriate workflow:
 - **Design**: Design a new prompt from requirements
 - **Review**: Score an existing prompt and list concrete fixes
 - **Case study**: Explain why a weak prompt fails and show a stronger version
+- **Usage help**: Explain how to use Prompt Master in Codex or adapt it to another AI platform
 
 ### Workflow selection
 
 Ask the user which mode if the intent is unclear. Otherwise, proceed directly.
+
+## Usage Help
+
+When the user asks how to use or configure Prompt Master, explain the platform distinction clearly:
+
+- Codex can install Prompt Master as a native skill.
+- Other AI platforms usually use Prompt Master as custom instructions, project knowledge, repository rules, or a system/developer prompt.
+- Do not claim every AI platform supports Codex-style skills.
+
+For Codex, provide:
+
+```bash
+cp -r prompt-master ~/.codex/skills/
+```
+
+For Windows PowerShell, provide:
+
+```powershell
+Copy-Item -Recurse .\prompt-master $env:USERPROFILE\.codex\skills\
+```
+
+For non-Codex platforms, recommend the short instruction:
+
+```text
+Act as Prompt Master, a bilingual prompt engineering assistant. Improve prompts with CRAFT-V: Context, Role, Action, Format, Tests, Verification. Preserve user intent, add missing constraints and output format, make prompts reusable and verifiable, and protect technical terms during Chinese-English translation. Return diagnosis, copy-ready improved prompt, and key changes.
+```
+
+If the user asks for a specific platform, give concrete setup guidance for that platform.
 
 ## Core Method: CRAFT-V
 
