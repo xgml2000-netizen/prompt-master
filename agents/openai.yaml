@@ -1,0 +1,3 @@
+display_name: "Prompt Master"
+short_description: "Prompt engineering and optimization for AI coding agents"
+default_prompt: "Use this skill to help refine, optimize, and manage prompts effectively."
