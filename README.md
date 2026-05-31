@@ -1,10 +1,28 @@
 # Prompt Master
 
-Prompt Master is a bilingual prompt engineering skill and template library for Codex and AI agents.
+### The Prompt Engineering Skill for Codex, ChatGPT, Claude, Cursor, Gemini, Copilot and AI Agents
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Codex%20%7C%20ChatGPT%20%7C%20Claude%20%7C%20Cursor%20%7C%20Gemini-blue.svg)](docs/platform-configuration.md)
+[![Templates](https://img.shields.io/badge/templates-agent%20%7C%20coding%20%7C%20research%20%7C%20writing-purple.svg)](assets/templates)
+[![Languages](https://img.shields.io/badge/docs-English%20%7C%20中文%20%7C%20日本語%20%7C%20Deutsch-orange.svg)](#languages)
+
+English | [中文](README_ZH.md) | [日本語](README_JA.md) | [Deutsch](README_DE.md) | [Changelog](CHANGELOG.md)
+
+Prompt Master is a multilingual prompt engineering skill and template library for Codex and AI agents.
 
 It is built for one practical goal: turn vague human intent into prompts that agents can execute, verify, and reuse.
 
 > 中文：Prompt Master 不是简单的“提示词大全”，而是一套面向 Codex / AI Agent 的双语提示词工程工作流。它帮助你把模糊需求变成结构清晰、可执行、可复用、可评审的高质量提示词。
+
+## Languages
+
+| Language | README | Manual |
+| --- | --- | --- |
+| English | [README.md](README.md) | [User Manual](docs/user-manual/en/README.md) |
+| 中文 | [README_ZH.md](README_ZH.md) | [用户手册](docs/user-manual/zh/README.md) |
+| 日本語 | [README_JA.md](README_JA.md) | Coming soon |
+| Deutsch | [README_DE.md](README_DE.md) | Coming soon |
 
 ## Core Competitiveness
 
@@ -41,6 +59,7 @@ Most prompt repositories collect prompts. Prompt Master focuses on the full prom
 | Area | Content |
 | --- | --- |
 | Usage | [How to Use](docs/how-to-use.md) |
+| User manual | [English](docs/user-manual/en/README.md), [中文](docs/user-manual/zh/README.md) |
 | Platform setup | [Platform Configuration Guide](docs/platform-configuration.md) |
 | Core method | [Prompt Engineering Framework](docs/prompt-engineering-framework.md) |
 | Differentiation | [Core Competitiveness](docs/core-competitiveness.md) |
@@ -49,6 +68,17 @@ Most prompt repositories collect prompts. Prompt Master focuses on the full prom
 | Templates | [Agent](assets/templates/agent-system-prompt.md), [Code Review](assets/templates/code-review-prompt.md), [Research](assets/templates/research-brief-prompt.md), [Translation](assets/templates/translation-prompt.md), [Bug Fix](assets/templates/bug-fix-prompt.md), [PRD to Tasks](assets/templates/prd-to-tasks-prompt.md), [Data Analysis](assets/templates/data-analysis-prompt.md), [Content Rewrite](assets/templates/content-rewrite-prompt.md) |
 | Quality system | [Prompt Quality Checklist](assets/checklists/prompt-quality-checklist.md), [Prompt Review Rubric](assets/checklists/prompt-review-rubric.md) |
 | Growth | [Star Growth Plan](docs/star-growth-plan.md) |
+
+## Documentation
+
+- [User Manual](docs/user-manual/en/README.md)
+- [Documentation Hub](docs/README.md)
+- [Platform Configuration Guide](docs/platform-configuration.md)
+- [How to Use Prompt Master](docs/how-to-use.md)
+- [Prompt Engineering Framework](docs/prompt-engineering-framework.md)
+- [Core Competitiveness](docs/core-competitiveness.md)
+- [Real Workflow Case Studies](examples/case-studies.md)
+- [Prompt Review Rubric](assets/checklists/prompt-review-rubric.md)
 
 ## Quick Start
 
@@ -257,6 +287,24 @@ More examples:
 - Practical enough for real workflows
 - Bilingual when translation is part of the job
 
+## FAQ
+
+### Is Prompt Master only for Codex?
+
+No. Codex has the native skill experience, but the same Prompt Master method can be used in ChatGPT, Claude, Cursor, Gemini, GitHub Copilot, DeepSeek, Kimi, Doubao, Qwen, and API-based products through custom instructions, project rules, or system prompts.
+
+### Is this a prompt collection?
+
+Not exactly. It includes templates, but the real value is the workflow: CRAFT-V, rubrics, case studies, translation rules, platform setup, and reusable prompt architecture.
+
+### Can I use it for Chinese prompts?
+
+Yes. Chinese-English prompt engineering is one of the core use cases. Prompt Master preserves code, paths, API names, JSON keys, command flags, placeholders, constraints, and output format during translation.
+
+### What makes a good contribution?
+
+A good contribution solves a real workflow, includes a copy-ready prompt, explains when to use it, and ideally includes a before/after example.
+
 ## Roadmap
 
 - Add 30+ battle-tested prompt templates
@@ -264,6 +312,8 @@ More examples:
 - Add domain packs for coding, research, writing, product, data, and operations
 - Add evaluation examples for prompt regression testing
 - Add short demo videos or GIFs for the Codex skill workflow
+- Complete full Japanese and German documentation
+- Add platform-specific example projects for ChatGPT GPTs, Claude Projects, Cursor Rules, and Copilot instructions
 
 ## Contributing
 
@@ -280,3 +330,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 ## License
 
 MIT - see [LICENSE](LICENSE).
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=xgml2000-netizen/prompt-master&type=Date)](https://www.star-history.com/#xgml2000-netizen/prompt-master&Date)
